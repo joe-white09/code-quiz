@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Coding Quiz</title>
 </head>
 <body>
-    
+
+    <div class="container">
+
+        <div class="options">
+            <button id="start-btn" class="start">Start</button> 
+            <button id="high-scores-btn" class="highscores">View HighScores</button>          
+            <button id="rules-btn" class="rules">Rules</button>
+        </div>
+
+        <div id="question-card" class="hide">
+            <h2 id="countdown"></h2>
+            <div id="question"></div>
+            <div id="answer-buttons" class="btn-list">
+            </div>
+        </div> 
+        
+        <div id="rules-list" class="hide">
+        <h2>Rules of the Quiz</h2>
+        <ul>
+            <li>You will have 60 seconds to complete this Quiz</li>
+            <li>For each correct answer, you will receive 5 pts</li>
+            <li>For each incorrect answer, you will be deducted 5 seconds from your time</li>
+            <li>The game is over when you have answered all questions, or run out of time</li>
+        </ul>
+        </div>
+    </div>
+
+<script src="./assets/js/script.js"></script>
 </body>
 </html>

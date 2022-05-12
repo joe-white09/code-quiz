@@ -1,0 +1,76 @@
+/* navigation button styles */
+.start {
+    font-size: 35px;
+    background-color: cyan;
+}
+
+.start:hover {
+    background-color: aquamarine;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.highscores {
+    font-size: 35px;
+    background-color: cyan;
+}
+
+.highscores:hover {
+    background-color: aquamarine ;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.rules {
+    font-size: 35px;
+    background-color: cyan;
+}
+
+.rules:hover {
+    background-color: aquamarine;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Question card styles */
+#question-card {
+    font-size: 35px;
+    text-align: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.btn-list {
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.btn {
+    font-size: 25px;
+}
+
+/* styles for rules*/
+
+
+#rules-list h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+#rules-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px; 
+}
+
+.hide {
+    display: none;
+}
