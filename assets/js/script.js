@@ -73,65 +73,65 @@ var quizQuestions=[{
   question:"What does CSS stand for?",
   btnA:"Cascading Style Sheet",
   btnB:"Creeping Style Sheet",
-  btnC:"Crawling Slang Style",
-  btnD:"Cascading Style Style",
+  btnC:"Computer Style Sheet",
+  btnD:"Cascading Style Store",
   correct: "btn-A"
 },
 {
-  question:"What is a Boolean Value",
-  btnA:"True",
-  btnB:"False",
+  question:"What is a Boolean Value?",
+  btnA:"String",
+  btnB:"Object",
   btnC:"Correct",
   btnD:"True or False",
   correct:"btn-D"
 },
 {
-  question:"",
-  btnA:"",
-  btnB:"",
-  btnC:"",
-  btnD:"",
-  correct:""
+  question:"What is the correct syntax for an array in JavaScript?",
+  btnA:"{  }",
+  btnB:"(   )",
+  btnC:"[    ]",
+  btnD:"<    >",
+  correct:"btn-C"
 },
 {
-  question:"",
-  btnA:"",
-  btnB:"",
-  btnC:"",
-  btnD:"",
-  correct:""
+  question:"What is the main purpose of using JavaScript?",
+  btnA:"To change how the webpage is displayed",
+  btnB:"To save user information",
+  btnC:"To build the framework of the webpage",
+  btnD:"To add user interactivity",
+  correct:"btn-D"
 },
 {
-  question:"",
-  btnA:"",
-  btnB:"",
-  btnC:"",
-  btnD:"",
-  correct:""
+  question:"What is the proper syntax to leave a comment in CSS code?",
+  btnA:"!  !",
+  btnB:"//",
+  btnC:"/*  */",
+  btnD:"$(  )",
+  correct:"btn-B"
 },
 {
-  question:"",
-  btnA:"",
-  btnB:"",
-  btnC:"",
-  btnD:"",
-  correct:""
+  question:"What is the purpose of indentation and spacing while coding?",
+  btnA:"Spacing allows the computer to separate different functions of code",
+  btnB:"To allow easier readability for people reading it",
+  btnC:"There is no purpose at all",
+  btnD:"It looks cool",
+  correct:"btn-B"
 },
 {
-  question:"",
-  btnA:"",
-  btnB:"",
-  btnC:"",
-  btnD:"",
-  correct:""
+  question:"What is the purpose of leaving coding comments?",
+  btnA:"To let the computer know what to do with the code section",
+  btnB:"Green text in the document looks cool",
+  btnC:"It has no purpose at all",
+  btnD:"To describe sections or function of the code for others to easily see",
+  correct:"btn-D"
 },
 {
-  question:"",
-  btnA:"",
-  btnB:"",
-  btnC:"",
-  btnD:"",
-  correct:""
+  question:"What is an error in code called?",
+  btnA:"A Bug",
+  btnB:"A Stop",
+  btnC:"A Problem",
+  btnD:"An Error",
+  correct:"btn-A"
 }
 ];
 
