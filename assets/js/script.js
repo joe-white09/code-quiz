@@ -41,6 +41,7 @@ var startQuiz = function(){
     document.getElementById("rules-list").setAttribute("class", "hide");
     document.getElementById("highscore-list").setAttribute("class", "hide");
     document.getElementById("question-card").removeAttribute("class", "hide");
+    countdown();
       generateQuestion();   
 };
 
@@ -94,7 +95,21 @@ var saveHighscore = function(){
   }
 };
 
-    
+var countdown = function() {
+var timeInterval = setInterval(function () {
+  if (timeLeft > 1) {
+    timerEl.textContent = timeLeft + ' seconds remaining';
+    timeLeft--;
+  } else if (timeLeft === 1) {
+    timerEl.textContent = timeLeft + ' second remaining';
+    timeLeft--;
+  } else {
+    timerEl.textContent = '';
+    clearInterval(timeInterval);
+    endQuiz();
+  }
+}, 1000);
+}  
   
 // };
 
