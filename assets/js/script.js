@@ -9,7 +9,23 @@ var btnA = document.getElementById("btn-A");
 var btnB = document.getElementById("btn-B");
 var btnC = document.getElementById("btn-C");
 var btnD = document.getElementById("btn-D");
-
+//Pull Highscore list from local storage
+var highscore1Name= JSON.parse(localStorage.getItem("highscore1Name"));
+var highscore1Score=JSON.parse(localStorage.getItem("highscore1Score"));
+var highscore2Name= JSON.parse(localStorage.getItem("highscore2Name"));
+var highscore2Score=JSON.parse(localStorage.getItem("highscore2Score"));
+var highscore3Name= JSON.parse(localStorage.getItem("highscore3Name"));
+var highscore3Score=JSON.parse(localStorage.getItem("highscore3Score"));
+var highscore4Name= JSON.parse(localStorage.getItem("highscore4Name"));
+var highscore4Score=localStorage.getItem("highscore4Score");
+var highscore5Name= localStorage.getItem("highscore5Name");
+var highscore5Score=localStorage.getItem("highscore5Score");
+//Identify highscore list in html
+var highscore1 = document.getElementById("highscore1");
+var highscore2 = document.getElementById("highscore2");
+var highscore3 = document.getElementById("highscore3");
+var highscore4 = document.getElementById("highscore4");
+var highscore5 = document.getElementById("highscore5");
 
 var timeLeft = 60;
 
@@ -17,24 +33,25 @@ var timeLeft = 60;
 // functions of the buttons
 var openRules = function(){
     document.getElementById("rules-list").removeAttribute("class", "hide");
-    document.getElementById("question-card").setAttribute("class", "hide")
+    document.getElementById("question-card").setAttribute("class", "hide");
+    document.getElementById("highscore-list").setAttribute("class", "hide")
 };
 
 var startQuiz = function(){
     document.getElementById("rules-list").setAttribute("class", "hide");
+    document.getElementById("highscore-list").setAttribute("class", "hide");
     document.getElementById("question-card").removeAttribute("class", "hide");
-    for (var i = 0; i < quizQuestions.length; i++){
-      generateQuestion();
-        };   
+      generateQuestion();   
 };
 
 var highScoresList = function(){
     document.getElementById("rules-list").setAttribute("class", "hide");
-    document.getElementById("question-card").setAttribute("class", "hide")
+    document.getElementById("question-card").setAttribute("class", "hide");
+    document.getElementById("highscore-list").removeAttribute("class", "hide")
 };
 
 let quizQuestionIndex =0;
-
+let lastQuestionIndex = 8;
 var generateQuestion = function() {
   let q = quizQuestions[quizQuestionIndex];
   question.innerHTML = "<h2>" + q.question + "<h2>";
@@ -44,25 +61,70 @@ var generateQuestion = function() {
   btnD.innerHTML = q.btnD;
 };
 
+//End of quiz funtion, hides card and sets score info 
+var endQuiz = function(){
+  document.getElementById("question-card").setAttribute("class", "hide");
+  document.getElementById("highscore-list").removeAttribute("class", "hide");
+  playerInfo.name=window.prompt("Please enter your name to save your score");
+  saveHighscore();
+};
+var saveHighscore = function(){
+  if(highscore1Score<playerInfo.score){
+  localStorage.setItem("highscore1Name", JSON.stringify(playerInfo.name));
+  localStorage.setItem("highscore1Score", JSON.stringify(playerInfo.score));
+}
+  else if(highscore1Score>playerInfo.score>=highscore2Score){
+    localStorage.setItem("highscore2Name", JSON.stringify(playerInfo.name));
+    localStorage.setItem("highscore2Score", JSON.stringify(playerInfo.score));
+  }
+  else if(highscore2Score>playerInfo.score>=highscore3Score){
+    localStorage.setItem("highscore3Name", JSON.stringify(playerInfo.name));
+    localStorage.setItem("highscore3Score", playerInfo.score);
+  }
+  else if(highscore3Score>playerInfo.score>=highscore4Score){
+    localStorage.setItem("highscore4Name", JSON.stringify(playerInfo.name));
+    localStorage.setItem("highscore4Score", JSON.stringify(playerInfo.score));
+  }
+  else if(highscore4Score>playerInfo.score>=highscore5Score){
+    localStorage.setItem("highscore5Name", JSON.stringify(playerInfo.name));
+    localStorage.setItem("highscore5Score", JSON.stringify(playerInfo.score));
+  }
+  else{
+    window.alert("Better luck next time!")
+  }
+};
+
+    
+  
+// };
+
+// checks answer for correct or wrong
 var checkAnswer = function(event){
 
   if(event.target.getAttribute("id")===quizQuestions[quizQuestionIndex].correct){
     playerInfo.score=playerInfo.score+5;
-    quizQuestionIndex++;
-    generateQuestion();
-    console.log(playerInfo.score);
   }
   else{
     timeLeft=timeLeft-5;
-    quizQuestionIndex++;
-    generateQuestion();
-    console.log(playerInfo.score);
   };
+  if(quizQuestionIndex<lastQuestionIndex){
+  quizQuestionIndex++;
+  generateQuestion();
+  }else{
+    endQuiz();};
 };
+
+// sets highscore list
+highscore1.innerHTML= highscore1Name +" "+ highscore1Score;
+highscore2.innerHTML= highscore2Name +" "+ highscore2Score;
+highscore3.innerHTML= highscore3Name +" "+ highscore3Score;
+highscore4.innerHTML= highscore4Name +" "+ highscore4Score;
+highscore5.innerHTML= highscore5Name +" "+ highscore5Score;
+
 
 //Sets content for the question card
 var quizQuestions=[{
-  question: "what does HTML stand for?",
+  question: "What does HTML stand for?",
   btnA:"HyperText Markup Language",
   btnB:"HyperText Money Language",
   btnC: "HotType Markup Language",
@@ -107,7 +169,7 @@ var quizQuestions=[{
   btnB:"//",
   btnC:"/*  */",
   btnD:"$(  )",
-  correct:"btn-B"
+  correct:"btn-C"
 },
 {
   question:"What is the purpose of indentation and spacing while coding?",

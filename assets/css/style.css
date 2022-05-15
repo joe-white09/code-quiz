@@ -52,8 +52,10 @@
     flex-direction: column; 
 }
 
-.btn {
-    font-size: 25px;
+.btn-list button {
+    font-size: 35px;
+    margin: 10px 10px;
+    border-radius: 10px;
 }
 
 /* styles for rules*/

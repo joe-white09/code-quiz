@@ -8,7 +8,7 @@
     <title>Coding Quiz</title>
 </head>
 <body>
-
+<!---->
     <div class="container">
 
         <div class="options">
@@ -19,7 +19,7 @@
 
         <div id="question-card" class="hide">
             <h2 id="countdown"></h2>
-            <div id="question"></div>
+            <h2 id="question"></h2>
             <div id="answer-buttons" class="btn-list">
                 <button id="btn-A"></button>
                 <button id="btn-B"></button>
@@ -27,7 +27,17 @@
                 <button id="btn-D"></button>          
             </div>
         </div> 
-        
+        <div id="highscore-list" class="hide">
+            <h2>HighScores</h2>
+            <ul>
+                <li id="highscore1"></li>
+                <li id="highscore2"></li>
+                <li id="highscore3"></li>
+                <li id="highscore4"></li>
+                <li id="highscore5"></li>
+            </ul>
+            </div>
+        </div>
         <div id="rules-list" class="hide">
         <h2>Rules of the Quiz</h2>
         <ul>
@@ -35,6 +45,7 @@
             <li>For each correct answer, you will receive 5 pts</li>
             <li>For each incorrect answer, you will be deducted 5 seconds from your time</li>
             <li>The game is over when you have answered all questions, or run out of time</li>
+            <li>To try again, please refresh the page</li>
         </ul>
         </div>
     </div>
