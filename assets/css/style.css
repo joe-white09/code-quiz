@@ -1,3 +1,7 @@
+* {
+    background-color: bisque;
+}
+
 /* navigation button styles */
 .start {
     font-size: 35px;
@@ -56,6 +60,7 @@
     font-size: 35px;
     margin: 10px 10px;
     border-radius: 10px;
+    background-color: azure;
 }
 
 /* styles for rules*/
@@ -71,6 +76,22 @@
     flex-direction: column;
     align-items: center;
     font-size: 30px; 
+}
+
+#rules-list ul li {
+    margin: 5px 5px;
+}
+
+/*highscore styles*/
+#highscore-list h2 {
+   text-align: center;
+   font-size: 35px;
+}
+#highscore-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 35px;
 }
 
 .hide {

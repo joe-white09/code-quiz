@@ -41,6 +41,9 @@ var startQuiz = function(){
     document.getElementById("rules-list").setAttribute("class", "hide");
     document.getElementById("highscore-list").setAttribute("class", "hide");
     document.getElementById("question-card").removeAttribute("class", "hide");
+    document.getElementById("start-btn").setAttribute("class", "hide");
+    document.getElementById("high-scores-btn").setAttribute("class", "hide");
+    document.getElementById("rules-btn").setAttribute("class", "hide");
     countdown();
       generateQuestion();   
 };
@@ -68,25 +71,26 @@ var endQuiz = function(){
   document.getElementById("highscore-list").removeAttribute("class", "hide");
   playerInfo.name=window.prompt("Please enter your name to save your score");
   saveHighscore();
+  location.reload();
 };
 var saveHighscore = function(){
-  if(highscore1Score<playerInfo.score){
+  if(playerInfo.score>highscore1Score){
   localStorage.setItem("highscore1Name", JSON.stringify(playerInfo.name));
   localStorage.setItem("highscore1Score", JSON.stringify(playerInfo.score));
 }
-  else if(highscore1Score>playerInfo.score>=highscore2Score){
+  else if(playerInfo.score>=highscore2Score && playerInfo.score<=highscore1Score){
     localStorage.setItem("highscore2Name", JSON.stringify(playerInfo.name));
     localStorage.setItem("highscore2Score", JSON.stringify(playerInfo.score));
   }
-  else if(highscore2Score>playerInfo.score>=highscore3Score){
+  else if(playerInfo.score>=highscore3Score && playerInfo.score<=highscore2Score){
     localStorage.setItem("highscore3Name", JSON.stringify(playerInfo.name));
     localStorage.setItem("highscore3Score", playerInfo.score);
   }
-  else if(highscore3Score>playerInfo.score>=highscore4Score){
+  else if(playerInfo.score>=highscore4Score && playerInfo.score<=highscore3Score){
     localStorage.setItem("highscore4Name", JSON.stringify(playerInfo.name));
     localStorage.setItem("highscore4Score", JSON.stringify(playerInfo.score));
   }
-  else if(highscore4Score>playerInfo.score>=highscore5Score){
+  else if(playerInfo.score>=highscore5Score && playerInfo.score<=highscore4Score){
     localStorage.setItem("highscore5Name", JSON.stringify(playerInfo.name));
     localStorage.setItem("highscore5Score", JSON.stringify(playerInfo.score));
   }
@@ -109,10 +113,8 @@ var timeInterval = setInterval(function () {
     endQuiz();
   }
 }, 1000);
-}  
+}; 
   
-// };
-
 // checks answer for correct or wrong
 var checkAnswer = function(event){
 
